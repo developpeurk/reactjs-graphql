@@ -3,10 +3,18 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {ApolloProvider} from "@apollo/react-hooks"
+import client from './Client';
+require( 'dotenv' ).config();
+
 
 ReactDOM.render(
   <React.StrictMode>
+    <ApolloProvider client={client}>
     <App />
+    </ApolloProvider>
+      
+      
   </React.StrictMode>,
   document.getElementById('root')
 );
